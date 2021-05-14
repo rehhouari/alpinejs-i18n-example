@@ -19,11 +19,19 @@
 			class="flex flex-col space-y-4 p-6 w-sm max-w-full mx-auto bg-gray-800 text-white rounded-3xl shadow-lg"
 			x-data
 		>
-			<h1 class="prose-xl font-bold" x-text="$t('title')">Alpine I18n Example</h1>
+			<h1 class="prose-xl font-bold" x-text="$t('title')">
+				Alpine I18n Example
+			</h1>
 
 			<p class="text-xl my-2" x-text="$t('hello')"></p>
 
 			<p x-text="$t('ipsum')"></p>
+
+			<p>
+				<span x-text="$t('nested')"></span>:
+				<span x-text="$t('deep.one')"></span>
+				<span x-text="$t('deep.two.three')"></span>
+			</p>
 
 			<button
 				class="bg-white text-gray-800 p-1 fill-current rounded-md flex justify-evenly w-32 mx-auto"
@@ -61,8 +69,9 @@
 					title: 'Alpine i18n Example',
 					deep: {
 						one: 'one',
-						two: 'two',
+						two: { three: 'two' },
 					},
+					nested: 'Nested string',
 				},
 				ar: {
 					hello: 'مرحبا',
@@ -71,19 +80,22 @@
 						'كياسي أرشيتيكتو بيتاي فيتاي ديكاتا سيونت أكسبليكابو. نيمو أنيم أبسام فوليوباتاتيم كيواي فوليوبتاس سايت أسبيرناتشر أيوت أودايت أيوت فيوجايت, سيد كيواي كونسيكيونتشر ماجناي دولارس أيوس كيواي راتاشن فوليوبتاتيم سيكيواي نيسكايونت. نيكيو بوررو كيوايسكيوم ايست,كيواي دولوريم ايبسيوم كيوا دولار سايت أميت, كونسيكتيتيور,أديبايسكاي فيلايت, سيد كيواي نون نيومكيوام ايايوس موداي تيمبورا انكايد',
 					deep: {
 						one: 'واحد',
-						two: 'اثنان',
+						two: { three: 'اثنان' },
 					},
+					nested: 'سلسلة متداخلة',
 				},
 
 				cn: {
 					hello: '你好',
 					title: 'Alpine i18n示例',
-					ipsum: '滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢，古今多少事，滚滚长江东逝水，浪花淘尽英雄。 几度夕阳红。白发渔樵江渚上，都付笑谈中',
+					ipsum:
+						'滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢，古今多少事，滚滚长江东逝水，浪花淘尽英雄。 几度夕阳红。白发渔樵江渚上，都付笑谈中',
 					deep: {
-						one: 'one',
-						two: 'two',
-					},	
-				}
+						one: '一个',
+						two: { three: '二' },
+					},
+					nested: '嵌套字符串',
+				},
 			};
 
 			// finally, pass them to AlpineI18n:
