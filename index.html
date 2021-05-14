@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{name} Example</title>
+		<!--Import {name}-->
+		<script src="https://cdn.jsdelivr.net/npm/{package}/dist/index.umd.js"></script>
+		<!--Import Alpine.js-->
+		<script
+			src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js"
+			defer
+		></script>
+	</head>
+	<body class="bg-white p-3">
+		<div
+			id="app"
+			class="text-center p-6 w-sm max-w-full mx-auto bg-gray-800 rounded-3xl shadow-lg"
+			x-data
+		></div>
+		<script type="module" src="/main.js"></script>
+	</body>
+</html>
