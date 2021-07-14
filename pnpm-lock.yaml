@@ -1,12 +1,12 @@
 lockfileVersion: 5.3
 
 specifiers:
-  alpinejs: ^2.8.2
+  alpinejs: ^3.x
   vite: ^2.2.3
   vite-plugin-windicss: ^0.15.10
 
 dependencies:
-  alpinejs: 2.8.2
+  alpinejs: 3.2.1
   vite-plugin-windicss: 0.15.10_vite@2.3.2
 
 devDependencies:
@@ -35,6 +35,16 @@ packages:
       fastq: 1.11.0
     dev: false
 
+  /@vue/reactivity/3.1.4:
+    resolution: {integrity: sha512-YDlgii2Cr9yAoKVZFzgY4j0mYlVT73986X3e5SPp6ifqckSEoFSUWXZK2Tb53TB/9qO29BEEbspnKD3m3wAwkA==}
+    dependencies:
+      '@vue/shared': 3.1.4
+    dev: false
+
+  /@vue/shared/3.1.4:
+    resolution: {integrity: sha512-6O45kZAmkLvzGLToBxEz4lR2W6kXohCtebV2UxjH9GXjd8X9AhEn68FN9eNanFtWNzvgw1hqd6HkPRVQalqf7Q==}
+    dev: false
+
   /@windicss/plugin-utils/0.15.10:
     resolution: {integrity: sha512-xhC/d2oqjN1XEjXzG1+8YLOXiktIq3kPXOH3Rv0XOGdmN27XV7eur5g/yXE0fQ8xGrrzOijUb3qAItTgCO1hFA==}
     dependencies:
@@ -49,8 +59,10 @@ packages:
       - supports-color
     dev: false
 
-  /alpinejs/2.8.2:
-    resolution: {integrity: sha512-5yOUtckn4CBp0qsHpo2qgjZyZit84uXvHbB7NJ27sn4FA6UlFl2i9PGUAdTXkcbFvvxDJBM+zpOD8RuNYFvQAw==}
+  /alpinejs/3.2.1:
+    resolution: {integrity: sha512-MYYGUmVHNWN27TvgAtUCYXZlfsXoVCrLQT3a0Ak6CQKqf1TCHfQKxmhzJWscW5kPcLlOK2aYmWbV2H+XyfN2FQ==}
+    dependencies:
+      '@vue/reactivity': 3.1.4
     dev: false
 
   /ansi-styles/4.3.0:

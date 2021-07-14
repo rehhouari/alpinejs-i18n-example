@@ -1,131 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Alpine I18n Example</title>
-		<!--Import Alpine I18n-->
-		<script src="https://cdn.jsdelivr.net/npm/alpinejs-i18n/dist/index.umd.js"></script>
-		<!--Import Alpine.js-->
-		<script
-			src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js"
-			defer
-		></script>
-	</head>
-	<body class="bg-white p-3">
-		<div
-			id="app"
-			class="flex flex-col space-y-4 p-6 w-sm max-w-full mx-auto bg-gray-800 text-white rounded-3xl shadow-lg"
-			x-data
-		>
-			<h1 class="prose-xl font-bold" x-text="$t('title')">
-				Alpine I18n Example
-			</h1>
 
-			<p class="text-xl my-2" x-text="$t('hello')"></p>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpine I18n Example</title>
+    <!--Import Alpine I18n-->
+    <script src="/cdn.js" defer></script>
+    <!--Import Alpine.js -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
 
-			<p class="tracking-tight" x-text="$t('ipsum')"></p>
+<body class="bg-white p-3">
+    <div id="app"
+        class="flex flex-col space-y-4 p-6 w-sm max-w-full mx-auto bg-gray-800 text-white rounded-3xl shadow-lg" x-data>
+        <h1 class="prose-xl font-bold" x-text="$t('title')">
+            Alpine I18n Example
+        </h1>
 
-			<p>
-				<span x-text="$t('nested')"></span>:
-				<span x-text="$t('deep.one')"></span>
-				<span x-text="$t('deep.two.three')"></span>
-			</p>
+        <p class="text-xl my-2" x-text="$t('hello')"></p>
 
-			<button
-				class="bg-white text-gray-800 p-1 fill-current rounded-md flex justify-evenly w-32 mx-auto"
-				@click="toggle()"
-			>
-				<span class="font-bold" x-text="$locale()"></span>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
-					/>
-				</svg>
-			</button>
+        <p class="tracking-tight" x-text="$t('ipsum')"></p>
 
-			<a class="bg-gray-200 rounded-md p-1 w-32 font-bold text-center mx-auto text-gray-800" href="https://github.com/rehhouari/alpinejs-i18n">Github</a>
-		</div>
-		<script>
-			// the default locale
-			// you can for example take it from the URL.
-			let locale = 'en';
+        <p>
+            <span x-text="$t('nested')"></span>:
+            <span x-text="$t('deep.one')"></span>
+            <span x-text="$t('deep.two.three')"></span>
+        </p>
 
-			// the translation data
-			// you can load/fetch these from files or keep them hardcoded.
-			let messages = {
-				en: {
-					hello: 'hello',
-					ipsum:
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et nibh a ipsum semper laoreet. Sed quis hendrerit turpis. Suspendisse sodales urna nec magna ultricies, vitae congue tellus tincidunt. Vestibulum vitae dolor a nunc dictum maximus. Suspendisse elementum felis aliquet ante vestibulum, eget malesuada sem auctor. Nunc tincidunt nibh vitae ante tempor, et suscipit felis faucibus. Fusce convallis id erat consequat consequat. Morbi in velit tellus. Integer vitae tortor cursus, facilisis eros ut, egestas nisl. Nulla hendrerit venenatis tempor. Nulla maximus, sem sodales fringilla posuere',
-					title: 'Alpine i18n Example',
-					deep: {
-						one: 'one',
-						two: { three: 'two' },
-					},
-					nested: 'Nested string',
-				},
-				ar: {
-					hello: 'مرحبا',
-					title: 'مثال Alpine i18n',
-					ipsum:
-						'كياسي أرشيتيكتو بيتاي فيتاي ديكاتا سيونت أكسبليكابو. نيمو أنيم أبسام فوليوباتاتيم كيواي فوليوبتاس سايت أسبيرناتشر أيوت أودايت أيوت فيوجايت, سيد كيواي كونسيكيونتشر ماجناي دولارس أيوس كيواي راتاشن فوليوبتاتيم سيكيواي نيسكايونت. نيكيو بوررو كيوايسكيوم ايست,كيواي دولوريم ايبسيوم كيوا دولار سايت أميت, كونسيكتيتيور,أديبايسكاي فيلايت, سيد كيواي نون نيومكيوام ايايوس موداي تيمبورا انكايد',
-					deep: {
-						one: 'واحد',
-						two: { three: 'اثنان' },
-					},
-					nested: 'سلسلة متداخلة',
-				},
+        <button class="bg-white text-gray-800 p-1 fill-current rounded-md flex justify-evenly w-32 mx-auto"
+            @click="toggle()">
+            <span class="font-bold" x-text="$locale()"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+            </svg>
+        </button>
 
-				cn: {
-					hello: '你好',
-					title: 'Alpine i18n示例',
-					ipsum:
-						'滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢，古今多少事，滚滚长江东逝水，浪花淘尽英雄。 几度夕阳红。白发渔樵江渚上，都付笑谈中',
-					deep: {
-						one: '一个',
-						two: { three: '二' },
-					},
-					nested: '嵌套字符串',
-				},
-			};
+        <a class="bg-gray-200 rounded-md p-1 w-32 font-bold text-center mx-auto text-gray-800"
+            href="https://github.com/rehhouari/alpinejs-i18n">Github</a>
+    </div>
+    <script type="module" src="/main.js"></script>
 
-			// finally, pass them to AlpineI18n:
-			window.AlpineI18n.create(locale, messages);
+    <script defer>
+        // the default locale
+        // you can for example take it from the URL.
+        // here we take it from the localStorage, if it exist & default to en.
+        let locale = localStorage.getItem('locale') || 'en';
 
-			var locales = ['en', 'ar', 'cn'];
-			var current = 0;
+        // the translation data
+        // you can load/fetch these from files or keep them hardcoded.
+        let messages = {
+            en: {
+                hello: 'hello',
+                ipsum:
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et nibh a ipsum semper laoreet. Sed quis hendrerit turpis. Suspendisse sodales urna nec magna ultricies, vitae congue tellus tincidunt. Vestibulum vitae dolor a nunc dictum maximus. Suspendisse elementum felis aliquet ante vestibulum, eget malesuada sem auctor. Nunc tincidunt nibh vitae ante tempor, et suscipit felis faucibus. Fusce convallis id erat consequat consequat. Morbi in velit tellus. Integer vitae tortor cursus, facilisis eros ut, egestas nisl. Nulla hendrerit venenatis tempor. Nulla maximus, sem sodales fringilla posuere',
+                title: 'Alpine i18n Example',
+                deep: {
+                    one: 'one',
+                    two: { three: 'two' },
+                },
+                nested: 'Nested string',
+            },
+            ar: {
+                hello: 'مرحبا',
+                title: 'مثال Alpine i18n',
+                ipsum:
+                    'كياسي أرشيتيكتو بيتاي فيتاي ديكاتا سيونت أكسبليكابو. نيمو أنيم أبسام فوليوباتاتيم كيواي فوليوبتاس سايت أسبيرناتشر أيوت أودايت أيوت فيوجايت, سيد كيواي كونسيكيونتشر ماجناي دولارس أيوس كيواي راتاشن فوليوبتاتيم سيكيواي نيسكايونت. نيكيو بوررو كيوايسكيوم ايست,كيواي دولوريم ايبسيوم كيوا دولار سايت أميت, كونسيكتيتيور,أديبايسكاي فيلايت, سيد كيواي نون نيومكيوام ايايوس موداي تيمبورا انكايد',
+                deep: {
+                    one: 'واحد',
+                    two: { three: 'اثنان' },
+                },
+                nested: 'سلسلة متداخلة',
+            },
 
-			function toggle() {
-				current++;
-				if (current >= locales.length) {
-					current = 0;
-				}
+            cn: {
+                hello: '你好',
+                title: 'Alpine i18n示例',
+                ipsum:
+                    '滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢，古今多少事，滚滚长江东逝水，浪花淘尽英雄。 几度夕阳红。白发渔樵江渚上，都付笑谈中',
+                deep: {
+                    one: '一个',
+                    two: { three: '二' },
+                },
+                nested: '嵌套字符串',
+            },
+        };
 
-				window.AlpineI18n.locale = locales[current];
-			}
+        document.addEventListener('alpine-i18n:ready', function () {
+            window.AlpineI18n.create(locale, messages);
+        });
 
-			// define the RTL locales you support
-			var rtlLocales = ['ar', 'fa'];
-			// listen to locale changes and update direction
-			window.addEventListener('locale-change', function () {
-				if (rtlLocales.includes(window.AlpineI18n.locale)) {
-					document.body.setAttribute('dir', 'rtl');
-				} else {
-					document.body.removeAttribute('dir');
-				}
-			});
-		</script>
-		<script type="module" src="/main.js"></script>
-	</body>
+        var locales = ['en', 'ar', 'cn'];
+        var current = 0;
+
+        function toggle() {
+            current++;
+            if (current >= locales.length) {
+                current = 0;
+            }
+
+            window.AlpineI18n.locale = locales[current];
+            localStorage.setItem('locale', locales[current])
+        }
+
+        // define the RTL locales you support
+        var rtlLocales = ['ar', 'fa'];
+        // listen to locale changes and update direction
+        document.addEventListener('alpine-i18n:locale-change', function () {
+            if (rtlLocales.includes(window.AlpineI18n.locale)) {
+                document.body.setAttribute('dir', 'rtl');
+            } else {
+                document.body.removeAttribute('dir');
+            }
+        });
+    </script>
+
+</body>
+
 </html>
