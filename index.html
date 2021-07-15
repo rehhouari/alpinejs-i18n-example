@@ -7,7 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alpine I18n Example</title>
     <!--Import Alpine I18n-->
-    <script src="https://cdn.jsdelivr.net/gh/rehhouari/alpinejs-i18n@main/packages/main/dist/cdn.js" defer></script>
+    <script type="module">
+        import AlpineI18n from 'https://cdn.jsdelivr.net/npm/alpinejs-i18n@2.x.x/dist/module.esm.js'
+
+        document.addEventListener('alpine:init', () => {
+            window.Alpine.plugin(AlpineI18n)
+        })
+    </script>
     <!--Import Alpine.js -->
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
@@ -90,7 +96,7 @@
         };
 
         document.addEventListener('alpine-i18n:ready', function () {
-            window.AlpineI18n.create(locale, messages);
+            AlpineI18n.create(locale, messages);
         });
 
         var locales = ['en', 'ar', 'cn'];
@@ -102,7 +108,7 @@
                 current = 0;
             }
 
-            window.AlpineI18n.locale = locales[current];
+            AlpineI18n.locale = locales[current];
             localStorage.setItem('locale', locales[current])
         }
 
@@ -110,7 +116,7 @@
         var rtlLocales = ['ar', 'fa'];
         // listen to locale changes and update direction
         document.addEventListener('alpine-i18n:locale-change', function () {
-            if (rtlLocales.includes(window.AlpineI18n.locale)) {
+            if (rtlLocales.includes(AlpineI18n.locale)) {
                 document.body.setAttribute('dir', 'rtl');
             } else {
                 document.body.removeAttribute('dir');
