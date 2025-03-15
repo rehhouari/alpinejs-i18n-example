@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "alpinejs": "^3.x",
-    "alpinejs-i18n": "^2.4.0",
+    "alpinejs-i18n": "^2.5.3",
     "vite-plugin-windicss": "^0.15.10"
-  }
+  },
+  "packageManager": "pnpm@10.5.2"
 }
